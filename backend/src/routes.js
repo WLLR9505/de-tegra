@@ -22,6 +22,17 @@ routes.post('/new_book', async (req, res) => {  // Insere livros
     
 
     return res.json({title});
+});
+
+routes.put('/buy', async (req, res) => { // Reduz a quantidade em estoque
+    const { id } = req.query;
+   const { amount } = req.body;
+
+   console.log(id);
+
+    await connection('books').where('id', '=', id).andWhere('amount', '>=', amount).update({ amount });
+
+   return res.json();
 })
 
 routes.put('/edit_book', async (req, res) => { // Alterar livro indicado pelo ID

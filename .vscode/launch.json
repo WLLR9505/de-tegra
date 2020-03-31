@@ -8,10 +8,13 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
+            "console": "integratedTerminal",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\backend\\src\\index.js"
+            // "program": "${workspaceFolder}\\backend\\src\\index.js"
+            // "program": "${workspaceFolder}\\frontend-server\\index.js"
+            "program": "${workspaceFolder}\\frontend-client\\index.js"
         }
     ]
 }
